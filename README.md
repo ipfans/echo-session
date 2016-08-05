@@ -29,7 +29,7 @@ func main() {
 		panic(err)
 	}
 	serv.Use(session.Sessions("GSESSION", store))
-	serv.Get("/", func(ctx *echo.Context) error {
+	serv.Get("/", func(ctx echo.Context) error {
 		session := session.Default(ctx)
 		var count int
 		v := session.Get("count")
