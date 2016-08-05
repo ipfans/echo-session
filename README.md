@@ -15,6 +15,7 @@ package main
 import (
 	"github.com/ipfans/echo-session"
 	"github.com/labstack/echo"
+	"github.com/labstack/echo/engine/standard"
 	"github.com/labstack/echo/middleware"
 )
 
@@ -45,7 +46,7 @@ func main() {
 		})
 		return nil
 	})
-	serv.Run("127.0.0.1:8080")
+	serv.Run(standard.New(":8080"))
 }
 
 ```
