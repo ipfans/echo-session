@@ -17,6 +17,7 @@ const (
 type Store interface {
 	sessions.Store
 	Options(Options)
+	MaxAge(int)
 }
 
 // Options stores configuration for a session or session store.
