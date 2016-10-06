@@ -34,3 +34,7 @@ func (c *cookieStore) Options(options Options) {
 		HttpOnly: options.HttpOnly,
 	}
 }
+
+func (c *cookieStore) MaxAge(age int) {
+	c.CookieStore.MaxAge(age)
+}
