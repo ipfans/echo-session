@@ -6,11 +6,10 @@ import (
 
 	"github.com/gorilla/sessions"
 	"github.com/labstack/echo"
-	"github.com/labstack/echo/engine/standard"
 )
 
 const (
-	DefaultKey  = "github.com/ipfans/echo-session"
+	DefaultKey  = "github.com/osiloke/echo-session"
 	errorFormat = "[sessions] ERROR! %s\n"
 )
 
@@ -61,10 +60,10 @@ type Session interface {
 func Sessions(name string, store Store) echo.MiddlewareFunc {
 	return func(h echo.HandlerFunc) echo.HandlerFunc {
 		return func(ctx echo.Context) error {
-			rq := ctx.Request().(*standard.Request)
-			rs := ctx.Response().(*standard.Response)
-			
-			s := &session{name, rq.Request, store, nil, false, rs.ResponseWriter}
+			rq := ctx.Request()
+			rs := ctx.Response()
+
+			s := &session{name, rq, store, nil, false, rs}
 			ctx.Set(DefaultKey, s)
 			return h(ctx)
 		}
