@@ -1,6 +1,8 @@
 echo-session
 ======
 
+**This version only work with echo v2**
+
 Middleware echo-session is a session support for [echo](https://github.com/labstack/echo/).
 
 ### Installation
