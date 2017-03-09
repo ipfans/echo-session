@@ -17,7 +17,6 @@ package main
 import (
 	"github.com/ipfans/echo-session"
 	"github.com/labstack/echo"
-	"github.com/labstack/echo/engine/standard"
 	"github.com/labstack/echo/middleware"
 )
 
@@ -25,13 +24,12 @@ func main() {
 	serv := echo.New()
 	serv.Use(middleware.Logger())
 	serv.Use(middleware.Recover())
-	// store := session.NewCookieStore([]byte("secret"))
 	store, err := session.NewRedisStore(32, "tcp", "localhost:6379", "", []byte("secret"))
 	if err != nil {
 		panic(err)
 	}
 	serv.Use(session.Sessions("GSESSION", store))
-	serv.Get("/", func(ctx echo.Context) error {
+	serv.GET("/", func(ctx echo.Context) error {
 		session := session.Default(ctx)
 		var count int
 		v := session.Get("count")
@@ -48,9 +46,8 @@ func main() {
 		})
 		return nil
 	})
-	serv.Run(standard.New(":8080"))
+	serv.Start(":8081")
 }
-
 ```
 
 ## License
