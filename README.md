@@ -3,6 +3,8 @@ echo-session
 
 Middleware echo-session is a session support for [echo](https://github.com/labstack/echo/).
 
+**This version is working with echo v3. Please checkout v2 branch if you want use session with echo v2.**
+
 ### Installation
 
 	go get github.com/ipfans/echo-session
