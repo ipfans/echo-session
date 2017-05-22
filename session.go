@@ -64,7 +64,7 @@ func Sessions(name string, store Store) echo.MiddlewareFunc {
 		return func(ctx echo.Context) error {
 			rq := ctx.Request()
 			rs := ctx.Response()
-			s := &session{name, rq, store, nil, false, rs.Writer()}
+			s := &session{name, rq, store, nil, false, rs.Writer}
 			ctx.Set(DefaultKey, s)
 			defer context.Clear(rq)
 			return h(ctx)
