@@ -1,6 +1,8 @@
 echo-session
 ======
 
+[![Go Report Card](https://goreportcard.com/badge/github.com/ipfans/echo-session)](https://goreportcard.com/report/github.com/ipfans/echo-session) [![GoDoc](http://godoc.org/github.com/ipfans/echo-session?status.svg)](http://godoc.org/github.com/ipfans/echo-session)
+
 Middleware echo-session is a session support for [echo](https://github.com/labstack/echo/).
 
 **This version is working with echo v3. Please checkout v2 branch if you want use session with echo v2.**
