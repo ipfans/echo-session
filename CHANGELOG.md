@@ -4,7 +4,7 @@
 ## [v3.2.0](https://github.com/ipfans/echo-session/compare/v3.1.1...v3.2.0) (2018-07-20)
 FEATURE: Support Redis db selection.
 
-BUGFIX: #7 Update redigo client library.
+BUGFIX: [#17](https://github.com/ipfans/echo-session/issues/17) Update redigo client library.
 
 <a name="v3.1.1"></a>
 ## [v3.1.1](https://github.com/ipfans/echo-session/compare/v3.1.0...v3.1.1) (2017-07-17)
