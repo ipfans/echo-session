@@ -1,6 +1,8 @@
 package session
 
 import (
+	"database/sql"
+
 	"github.com/antonlindstrom/pgstore"
 	"github.com/gorilla/sessions"
 )
@@ -11,6 +13,14 @@ type PostgresStore interface {
 
 func NewPostgresStore(dbURL string, keyPairs ...[]byte) (PostgresStore, error) {
 	store, err := pgstore.NewPGStore(dbURL, keyPairs...)
+	if err != nil {
+		return nil, err
+	}
+	return &postgresStore{store}, nil
+}
+
+func NewPostgresStoreFromPool(db *sql.DB, keyPairs ...[]byte) (PostgresStore, error) {
+	store, err := pgstore.NewPGStoreFromPool(db, keyPairs...)
 	if err != nil {
 		return nil, err
 	}
