@@ -98,3 +98,13 @@ func (c *redisStore) Options(options Options) {
 func (c *redisStore) MaxAge(age int) {
 	c.RediStore.SetMaxAge(age)
 }
+
+// MaxLength sets RediStore.maxLength if the `l` argument is greater or equal 0
+// maxLength restricts the maximum length of new sessions to l.
+// If l is 0 there is no limit to the size of a session, use with caution.
+// The default for a new RediStore is 4096. Redis allows for max.
+// value sizes of up to 512MB (http://redis.io/topics/data-types)
+// Default: 4096,
+func (c *redisStore) MaxLength(length int) {
+	c.RediStore.SetMaxLength(length)
+}
