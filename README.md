@@ -5,7 +5,7 @@ echo-session
 
 Middleware echo-session is a session support for [echo](https://github.com/labstack/echo/).
 
-**This version is working with echo v3. Please checkout v2 branch if you want use session with echo v2.**
+**This version is working with echo v4. Please checkout v2 branch if you want use session with echo v2.**
 
 ### Installation
 
@@ -18,8 +18,8 @@ package main
 
 import (
 	"github.com/ipfans/echo-session"
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/v4/middleware"
 )
 
 func main() {
